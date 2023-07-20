@@ -21,7 +21,7 @@ class UserController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
-
+        $request->session()->flash('front.user_register_success', true);
         return redirect('/')->with('message', '登録が完了しました');
     }
 }

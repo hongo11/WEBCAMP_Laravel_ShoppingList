@@ -10,6 +10,9 @@
             @endforeach
             </div>
         @endif
+        @if (session('front.user_register_success') == true)
+            ユーザを登録しました！！<br>
+        @endif
         <form action="/login" method="post">
             @csrf
             email：<input name="email" value="{{ old('email') }}"><br>
